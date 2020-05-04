@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Automation Test" parallel="false" >
+    <!--parallel="false"-->
+
+    <parameter name="useCloudEnv" value="false"/>
+    <parameter name="cloudEnvName" value="browserstack"/>
+    <parameter name="os" value="mac"/>
+    <parameter name="os_version" value="Mojave"/>
+    <parameter name="browserVersion" value="76.0"/>
+    <parameter name="browserName" value="chrome"/>
+    <parameter name="driverDirectory" value="C:\Users\easha\OneDrive\Desktop\Automation\WebAutomationFrameWork\generic\drivers\windows\chromedriver.exe"></parameter>
+    <parameter name="url" value="http://automationpractice.com"/>
+
+    <test name = "Automation Practice">
+
+        <classes>
+            <!--  <class name="page_objects_test.HomePageTest"/>-->
+            <class name="pageobjecttest.HomePageTest"/>
+
+        </classes>
+
+        <!--Hello-->
+    </test>
+
+</suite>
