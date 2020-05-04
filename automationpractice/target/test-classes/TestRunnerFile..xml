@@ -6,9 +6,7 @@
 
     <parameter name="useCloudEnv" value="false"/>
     <parameter name="cloudEnvName" value="browserstack"/>
-    <parameter name="os" value="mac"/>
-    <parameter name="os_version" value="Mojave"/>
-    <parameter name="browserVersion" value="76.0"/>
+    <parameter name="os" value="windows"/>
     <parameter name="browserName" value="chrome"/>
     <parameter name="driverDirectory" value="C:\Users\easha\OneDrive\Desktop\Automation\WebAutomationFrameWork\generic\drivers\windows\chromedriver.exe"></parameter>
     <parameter name="url" value="http://automationpractice.com"/>

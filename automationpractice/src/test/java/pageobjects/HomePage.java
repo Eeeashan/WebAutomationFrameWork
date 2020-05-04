@@ -23,7 +23,6 @@ public class HomePage {
 
     public void sendKeys() throws InterruptedException {
         searchBox.sendKeys("dress", Keys.ENTER);
-        Thread.sleep(2000);
         printedSummerDress.click();
         addToCart.click();
         Thread.sleep(2000);
