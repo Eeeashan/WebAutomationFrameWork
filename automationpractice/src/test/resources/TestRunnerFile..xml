@@ -17,6 +17,7 @@
         <classes>
             <!--  <class name="page_objects_test.HomePageTest"/>-->
             <class name="pageobjecttest.HomePageTest"/>
+            <class name="pageobjecttest.LoginTest"/>
 
         </classes>
 
