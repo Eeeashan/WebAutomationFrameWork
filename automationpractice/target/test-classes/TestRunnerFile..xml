@@ -7,15 +7,18 @@
     <parameter name="useCloudEnv" value="false"/>
     <parameter name="cloudEnvName" value="browserstack"/>
     <parameter name="os" value="windows"/>
+    <parameter name="os_version" value="10"/>
+    <parameter name="browserVersion" value="81.0"/>
     <parameter name="browserName" value="chrome"/>
-    <parameter name="driverDirectory" value="C:\Users\easha\OneDrive\Desktop\Automation\WebAutomationFrameWork\generic\drivers\windows\chromedriver.exe"></parameter>
-    <parameter name="url" value="http://automationpractice.com"/>
+    <parameter name="url" value="https://www.ebay.com/"/>
 
     <test name = "Automation Practice">
 
         <classes>
             <!--  <class name="page_objects_test.HomePageTest"/>-->
+            <class name="pageobjecttest.LoginTest"/>
             <class name="pageobjecttest.HomePageTest"/>
+
 
         </classes>
 

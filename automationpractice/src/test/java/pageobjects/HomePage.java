@@ -1,35 +1,38 @@
 package pageobjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
+
+import java.util.List;
+
+import static base.BrowserDriver.driver;
+
 public class HomePage {
+
     /*
     * All the web elements will be available in this class
     * Assosiet methods
     * */
-    @FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[1]/a")
-    WebElement womenTab;
+    @FindBy(xpath = "//input[@placeholder='Search for anything']")
+    WebElement homeSearchHeader;
+    @FindBy(xpath = "//input[@type='submit']")
+    WebElement clickSearch;
+    @FindBy(xpath = "//a[@_sp='m570.l1524']")
+    WebElement hoverOver;
 
-    @FindBy(xpath = "//*[@id=\"search_query_top\"]")
-    WebElement searchBox;
 
-    @FindBy(xpath = "/html/body/div/div[2]/div/div[3]/div[2]/ul/li[1]/div/div[1]/div/a[1]/img")
-    WebElement printedSummerDress;
-
-    @FindBy(xpath = "//*[@id=\"add_to_cart\"]/button/span")
-    WebElement addToCart;
-
-    public void sendKeys() throws InterruptedException {
-        searchBox.sendKeys("dress", Keys.ENTER);
-        printedSummerDress.click();
-        addToCart.click();
-        Thread.sleep(2000);
+    public void search()  {
+        homeSearchHeader.sendKeys("iphonex");
+        clickSearch.click();
 
     }
-    public void clickWomenTab(){
-        womenTab.click();
+    public void hoverOver(){
+        Actions act = new Actions(driver);
+        act.moveToElement(hoverOver).perform();
     }
-
 }
+

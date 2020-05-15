@@ -17,13 +17,11 @@ public class HomePageTest extends BrowserDriver {
         homePage = PageFactory.initElements(driver,HomePage.class);
     }
     @Test
-    public void clickWomenTab(){
-        homePage.clickWomenTab();
+    public void search(){
+    homePage.search();
     }
     @Test
-    public void sendKeys() throws InterruptedException {
-        homePage.sendKeys();
-
+    public void hover(){
+        homePage.hoverOver();
     }
-
 }
