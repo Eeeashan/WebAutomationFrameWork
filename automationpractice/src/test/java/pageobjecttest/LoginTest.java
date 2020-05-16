@@ -15,6 +15,7 @@ public class LoginTest extends BrowserDriver {
 
     @BeforeMethod
     public void initializeElement(){
+
         loginTest = PageFactory.initElements(driver,Login.class);
     }
 
@@ -38,14 +39,11 @@ public class LoginTest extends BrowserDriver {
 
     @Test(dataProvider = "readData")
     public void clickSignIn(String email, String password) throws InterruptedException {
-        System.out.println("this is email "+email + password);
+
         loginTest.clickSignIn();
-        Thread.sleep(2000);
         loginTest.email(email);
-        Thread.sleep(2000);
         loginTest.click();
         loginTest.pas(password);
-        Thread.sleep(2000);
         loginTest.clickCont();
 
 
