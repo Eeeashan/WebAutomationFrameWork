@@ -31,6 +31,9 @@ public class Login {
     public void clickCont(){
         signInButton.click();
     }
+    public void click(){
+        clickContinue.click();
+    }
 
 
 }

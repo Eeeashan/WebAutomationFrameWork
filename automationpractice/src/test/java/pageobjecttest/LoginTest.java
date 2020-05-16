@@ -1,8 +1,7 @@
 package pageobjecttest;
 
 import base.BrowserDriver;
-import datareader.Data;
-import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import datareader.MyDataReader;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -18,18 +17,37 @@ public class LoginTest extends BrowserDriver {
     public void initializeElement(){
         loginTest = PageFactory.initElements(driver,Login.class);
     }
+
     @DataProvider
-    public Object[][] getLoginData() throws IOException, InvalidFormatException {
-        Object data [] [] = Data.getTestData("Sheet3");
+    public Object[][] readData() throws Exception {
+        String sheetName = null;
+        MyDataReader myDataReader = new MyDataReader();
+        //String path = System.getProperty("user.dir") + "/testData/TestData.xlsx";
+        myDataReader.setExcelFile("C:\\Users\\easha\\OneDrive\\Desktop\\Automation\\WebAutomationFrameWork\\automationpractice\\testData\\Test.xlsx");
+        String environment = System.getProperty("env", "QA");
+
+        if(environment.equals("QA")){
+            sheetName="Sheet1";}
+        else if(environment.equals("PROD")){
+            sheetName="Sheet3";
+        }
+
+        Object [][] data = myDataReader.getExcelSheetData(sheetName);
         return data;
     }
 
-    @Test(dataProvider = "getLoginData")
-    public void clickSignIn(String email, String password){
+    @Test(dataProvider = "readData")
+    public void clickSignIn(String email, String password) throws InterruptedException {
+        System.out.println("this is email "+email + password);
         loginTest.clickSignIn();
+        Thread.sleep(2000);
         loginTest.email(email);
+        Thread.sleep(2000);
+        loginTest.click();
         loginTest.pas(password);
+        Thread.sleep(2000);
         loginTest.clickCont();
+
 
     }
 }

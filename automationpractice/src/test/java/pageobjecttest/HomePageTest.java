@@ -20,6 +20,7 @@ public class HomePageTest extends BrowserDriver {
     public void search(){
     homePage.search();
     }
+
     @Test
     public void hover(){
         homePage.hoverOver();
